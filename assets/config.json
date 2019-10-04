@@ -1,0 +1,479 @@
+{
+    "tests": [
+        {
+            "name": "Test of the example",
+            "expectedResult": {
+                "winningBuyerName": "buyerE",
+                "winningPrice": 130
+            },
+            "reversePrice": 100,
+            "buyers": [
+                {
+                    "name": "buyerA",
+                    "bids": [
+                        110,
+                        130
+                    ]
+                },
+                {
+                    "name": "buyerB",
+                    "bids": [
+                    ]
+                },
+                {
+                    "name": "buyerC",
+                    "bids": [
+                        125
+                    ]
+                },
+                {
+                    "name": "buyerD",
+                    "bids": [
+                        105,
+                        115,
+                        90
+                    ]
+                },
+                {
+                    "name": "buyerE",
+                    "bids": [
+                        132,
+                        135,
+                        140
+                    ]
+                }
+            ]
+        },
+        {
+            "name": "Simple test",
+            "expectedResult": {
+                "winningBuyerName": "buyerB",
+                "winningPrice": 135
+            },
+            "reversePrice": 100,
+            "buyers": [
+                {
+                    "name": "buyerA",
+                    "bids": [
+                        110,
+                        130
+                    ]
+                },
+                {
+                    "name": "buyerB",
+                    "bids": [
+                        145,
+                        150
+                    ]
+                },
+                {
+                    "name": "buyerC",
+                    "bids": [
+                        125
+                    ]
+                },
+                {
+                    "name": "buyerD",
+                    "bids": [
+                        105,
+                        115,
+                        90
+                    ]
+                },
+                {
+                    "name": "buyerE",
+                    "bids": [
+                        132,
+                        135,
+                        140
+                    ]
+                }
+            ]
+        },
+        {
+            "name": "Another test",
+            "expectedResult": {
+                "winningBuyerName": "buyerD",
+                "winningPrice": 197
+            },
+            "reversePrice": 140,
+            "buyers": [
+                {
+                    "name": "buyerA",
+                    "bids": [
+                        140,
+                        190
+                    ]
+                },
+                {
+                    "name": "buyerB",
+                    "bids": [
+                        115,
+                        155
+                    ]
+                },
+                {
+                    "name": "buyerC",
+                    "bids": [
+                        123
+                    ]
+                },
+                {
+                    "name": "buyerD",
+                    "bids": [
+                        200,
+                        35,
+                        165
+                    ]
+                },
+                {
+                    "name": "buyerE",
+                    "bids": [
+                        197,
+                        118,
+                        97
+                    ]
+                }
+            ]
+        },
+        {
+            "name": "No winner for reserve price high",
+            "expectedResult": {
+                "winningBuyerName": null,
+                "winningPrice": null
+            },
+            "reversePrice": 340,
+            "buyers": [
+                {
+                    "name": "buyerA",
+                    "bids": [
+                        140,
+                        190
+                    ]
+                },
+                {
+                    "name": "buyerB",
+                    "bids": [
+                        115,
+                        155
+                    ]
+                },
+                {
+                    "name": "buyerC",
+                    "bids": [
+                        123
+                    ]
+                },
+                {
+                    "name": "buyerD",
+                    "bids": [
+                        200,
+                        35,
+                        165
+                    ]
+                },
+                {
+                    "name": "buyerE",
+                    "bids": [
+                        197,
+                        118,
+                        97
+                    ]
+                }
+            ]
+        },
+        {
+            "name": "Only one above the reserve price",
+            "expectedResult": {
+                "winningBuyerName": "buyerB",
+                "winningPrice": 115
+            },
+            "reversePrice": 100,
+            "buyers": [
+                {
+                    "name": "buyerA",
+                    "bids": [
+                        40,
+                        90
+                    ]
+                },
+                {
+                    "name": "buyerB",
+                    "bids": [
+                        115,
+                        55
+                    ]
+                },
+                {
+                    "name": "buyerC",
+                    "bids": [
+                        23
+                    ]
+                }
+            ]
+        },
+        {
+            "name": "Winner with winning price equals to reserve price",
+            "expectedResult": {
+                "winningBuyerName": "buyerB",
+                "winningPrice": 100
+            },
+            "reversePrice": 100,
+            "buyers": [
+                {
+                    "name": "buyerA",
+                    "bids": [
+                        40,
+                        90
+                    ]
+                },
+                {
+                    "name": "buyerB",
+                    "bids": [
+                        115,
+                        55
+                    ]
+                },
+                {
+                    "name": "buyerC",
+                    "bids": [
+                        100
+                    ]
+                }
+            ]
+        },
+        {
+            "name": "No bids",
+            "expectedResult": {
+                "winningBuyerName": null,
+                "winningPrice": null
+            },
+            "reversePrice": 100,
+            "buyers": [
+                {
+                    "name": "buyerA",
+                    "bids": [
+                    ]
+                },
+                {
+                    "name": "buyerB",
+                    "bids": [
+                    ]
+                },
+                {
+                    "name": "buyerC",
+                    "bids": [
+                    ]
+                }
+            ]
+        },
+        {
+            "name": "No buyers",
+            "expectedResult": {
+                "winningBuyerName": null,
+                "winningPrice": null
+            },
+            "reversePrice": 100,
+            "buyers": [
+            ]
+        },
+        {
+            "name": "Negative bids",
+            "expectedResult": {
+                "winningBuyerName": "buyerA",
+                "winningPrice": 116
+            },
+            "reversePrice": 100,
+            "buyers": [
+                {
+                    "name": "buyerA",
+                    "bids": [
+                        113,
+                        145,
+                        -45
+                    ]
+                },
+                {
+                    "name": "buyerB",
+                    "bids": [
+                        -16,
+                        34,
+                        -32
+                    ]
+                },
+                {
+                    "name": "buyerC",
+                    "bids": [
+                        116,
+                        -64,
+                        24
+                    ]
+                }
+            ]
+        },
+        {
+            "name": "Additional example",
+            "expectedResult": {
+                "winningBuyerName": "buyerC",
+                "winningPrice": 145
+            },
+            "reversePrice": 100,
+            "buyers": [
+                {
+                    "name": "buyerA",
+                    "bids": [
+                        113,
+                        145,
+                        45
+                    ]
+                },
+                {
+                    "name": "buyerB",
+                    "bids": [
+                        16,
+                        34,
+                        32
+                    ]
+                },
+                {
+                    "name": "buyerC",
+                    "bids": [
+                        16,
+                        64,
+                        245
+                    ]
+                }
+            ]
+        },
+        {
+            "name": "Same winning bids",
+            "expectedResult": {
+                "winningBuyerName": null,
+                "winningPrice": null
+            },
+            "reversePrice": 50,
+            "buyers": [
+                {
+                    "name": "buyerA",
+                    "bids": [
+                        35,
+                        55,
+                        45
+                    ]
+                },
+                {
+                    "name": "buyerB",
+                    "bids": [
+                        25,
+                        55,
+                        10
+                    ]
+                },
+                {
+                    "name": "buyerC",
+                    "bids": [
+                        23,
+                        34,
+                        12
+                    ]
+                }
+            ]
+        },
+        {
+            "name": "Same winning prices",
+            "expectedResult": {
+                "winningBuyerName": "buyerC",
+                "winningPrice": 55
+            },
+            "reversePrice": 50,
+            "buyers": [
+                {
+                    "name": "buyerA",
+                    "bids": [
+                        35,
+                        55,
+                        45
+                    ]
+                },
+                {
+                    "name": "buyerB",
+                    "bids": [
+                        25,
+                        55,
+                        10
+                    ]
+                },
+                {
+                    "name": "buyerC",
+                    "bids": [
+                        23,
+                        34,
+                        56
+                    ]
+                }
+            ]
+        },
+        {
+            "name": "All below reserve price a part one bid",
+            "expectedResult": {
+                "winningBuyerName": "buyerA",
+                "winningPrice": 90
+            },
+            "reversePrice": 70,
+            "buyers": [
+                {
+                    "name": "buyerA",
+                    "bids": [
+                        90,
+                        55,
+                        45
+                    ]
+                },
+                {
+                    "name": "buyerB",
+                    "bids": [
+                        25,
+                        55,
+                        10
+                    ]
+                },
+                {
+                    "name": "buyerC",
+                    "bids": [
+                        23,
+                        34,
+                        50
+                    ]
+                }
+            ]
+        },
+        {
+            "name": "Single round",
+            "expectedResult": {
+                "winningBuyerName": "buyerB",
+                "winningPrice": 350
+            },
+            "reversePrice": 50,
+            "buyers": [
+                {
+                    "name": "buyerA",
+                    "bids": [
+                        350
+                    ]
+                },
+                {
+                    "name": "buyerB",
+                    "bids": [
+                        550
+                    ]
+                },
+                {
+                    "name": "buyerC",
+                    "bids": [
+                        120
+                    ]
+                }
+            ]
+        }
+    ]
+}
