@@ -46,7 +46,7 @@ Each bid column is a round of the auction:
 
 - Round 1: B doesn't play => Output: E (132) is the temporary winner with the price of C (125)
 - Round 2: Taking only this round, E (135) is the winner with the price of A (130). But the output of round 1 must be taken in account => Output: the temporary winner is E (132) with the price of C (125)
-- Round 3: Taking only this round, E (140) is the winner with his own price (140). But the output of round 2 must be taken in account => Output: E (140) is the winner with the price of A (130)
+- Round 3: Taking only this round, E (140) is the winner with his own price (140). But the output of round 2 (and 1) must be taken in account => Output: E (140) is the winner with the price of A (130)
 
 Result
 
