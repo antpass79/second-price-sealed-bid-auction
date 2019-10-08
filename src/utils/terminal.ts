@@ -4,6 +4,7 @@ import clear from 'clear';
 
 import { NodeConfig } from './node-config';
 import { DynamicAlgorithm } from '../algorithms/dynamic-algorithm';
+import { StaticAlgorithm } from '../algorithms/static-algorithm';
 import { AlgorithmTester } from '../algorithms/algorithm-tester';
 import { Test } from '../models/test';
 
@@ -31,13 +32,17 @@ export class Terminal {
                     this.options();
                     break;
                 case 'b':
-                    this.clear();
+                    this._algorithmTester.test(new StaticAlgorithm(), this._tests);
                     this.options();
                     break;
                 case 'c':
+                    this.clear();
                     this.options();
                     break;
                 case 'd':
+                    this.options();
+                    break;
+                case 'e':
                     this.updateTests();
                     this.options();
                     break;
@@ -54,9 +59,10 @@ export class Terminal {
             chalk.magentaBright("\n\n\nSee readme.md file for more information on the program and on assumptions!"));
         let message = 'Choose an option: \n';
         message += 'a - Run tests with the dynamic algorithm\n';
-        message += 'b - Clear the terminal\n';
-        message += 'c - Show these options\n';
-        message += 'd - Reload tests from file\n';
+        message += 'b - Run tests with the static algorithm\n';
+        message += 'c - Clear the terminal\n';
+        message += 'd - Show these options\n';
+        message += 'e - Reload tests from file\n';
         console.log(message);
     }
 
