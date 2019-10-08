@@ -32,6 +32,10 @@ The goal is to implement an algorithm for finding the *winner* and the *winning 
 
 ### Explanation and assumptions
 
+In the below sections there are 2 algorithms to solve the problem, the first one is based on dynamic programming, the second one is a static algorithm.
+
+#### Dynamic Algorithm
+
 Taking the above example:
 
 | buyer | bid 1 | bid 2 | bid 3 |
@@ -53,6 +57,19 @@ Result
 E (140) is the winner with the price of A (130)
 
 Bacause the output of each round is the input of the next round, it means that an algorithm based on dynamic programming can be used to solve the problem.
+
+#### Static Algorithm
+
+These are the steps to solve the problem:
+
+1) For each buyer, store the max bid done and the buyer
+2) Put the max bids in a descending ordered list, based on the bid value
+3) if the bid on the top at the list >= reserve price:
+    - this is the winner
+    - the winning price is equal to:
+        - second bid in the list, if second bid in the list >= reserve price
+        - first bid in the list, otherwise
+4) Otherwise no solution
 
 ## Run the program
 
